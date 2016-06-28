@@ -1,0 +1,38 @@
+//header
+$menuHeight: 66px;
+$menuHeightItem: 30px;
+$menuColorIcon: rgb(24, 24, 24);
+
+.navbar-right {
+  padding: ($menuHeight - $menuHeightItem)/2 0px;
+
+  li > a {
+    padding: 0px 20px;
+    line-height: $menuHeightItem;
+    display: inline-block;
+  }
+
+  li > a > i {
+    font-size: 20px;
+    color: $menuColorIcon;
+  }
+
+  .icons-middle:after, .icons-middle:before {
+    content: "";
+    border-left: 1px solid rgb(24, 24, 24);
+  }
+
+  .language > a {
+    background: black;
+    color: white !important;
+    width: $menuHeightItem;
+    padding: 0px 7px;
+
+    &hover{
+
+    }
+  }
+}
+
+@media (min-width: 768px) {
+}
