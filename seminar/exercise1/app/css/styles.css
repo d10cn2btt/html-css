@@ -1,0 +1,17 @@
+.navbar-right {
+  padding: 18px 0px; }
+  .navbar-right li > a {
+    padding: 0px 20px;
+    line-height: 30px;
+    display: inline-block; }
+  .navbar-right li > a > i {
+    font-size: 20px;
+    color: #181818; }
+  .navbar-right .icons-middle:after, .navbar-right .icons-middle:before {
+    content: "";
+    border-left: 1px solid #181818; }
+  .navbar-right .language > a {
+    background: black;
+    color: white !important;
+    width: 30px;
+    padding: 0px 7px; }
