@@ -2,6 +2,7 @@
 $menuHeight: 66px;
 $menuHeightItem: 30px;
 $menuColorIcon: rgb(24, 24, 24);
+$slideHeight: 500px;
 
 .navbar-right {
   padding: ($menuHeight - $menuHeightItem)/2 0px;
@@ -28,11 +29,138 @@ $menuColorIcon: rgb(24, 24, 24);
     width: $menuHeightItem;
     padding: 0px 7px;
 
-    &hover{
+    &hover {
 
     }
   }
 }
 
+.menu-top {
+  margin-bottom: 0px;
+}
+
+//slide
+.owl-wrapper-outer {
+  max-height: $slideHeight;
+}
+
+@mixin button-slide($padding, $bg) {
+  padding: $padding;
+  background: $bg;
+}
+
+.big-slide {
+  position: relative;
+  margin-bottom: 35px;
+  .owl-controls {
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    margin-top: 0px;
+    .owl-prev {
+      @include button-slide(10px, black);
+      float: left;
+      margin-left: 15px;
+    }
+    .owl-next {
+      @include button-slide(10px, black);
+      float: right;
+      margin-right: 15px;
+    }
+    .owl-pagination {
+      position: absolute;
+      bottom: -200px;
+      width: 100%;
+      .owl-page {
+        span {
+          opacity: 1;
+          background: white;
+          &:active {
+            background: red;
+          }
+        }
+        &.active, &:hover {
+          span {
+            background: #ff345b;
+          }
+        }
+      }
+    }
+  }
+
+  .menu-slide {
+    position: absolute;
+    top: 40%;
+    width: 100%;
+    text-align: center;
+    .logo-slide {
+      margin-bottom: 20px;
+    }
+    .menu {
+      a {
+        color: white;
+        text-decoration: none;
+      }
+      ul {
+        list-style-type: none;
+      }
+      li {
+        display: inline-block;
+        font-size: 18px;
+        padding: 0px 31px;
+        border-right: 1px solid white;
+      }
+    }
+  }
+}
+
+//end slide
+
+//block category
+.block-category {
+  overflow: hidden;
+  .block-category-item {
+    transition: all 0.4s ease-out;
+    padding: 0px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    .block-category-des {
+      opacity: 0;
+
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: white;
+      font-weight: bold;
+    }
+    &:hover {
+      .block-category-des , .overlay{
+        transition: all 0.4s ease-out;
+        opacity: 1;
+      }
+    }
+
+    .overlay {
+      background: rgba(0, 0, 0, 0.3);
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      opacity: 0;
+    }
+  }
+}
+
+//end block category
 @media (min-width: 768px) {
+}
+
+//setting
+.icon-bar {
+  &:before {
+    content: "";
+  }
 }
