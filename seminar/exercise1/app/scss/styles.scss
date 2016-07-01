@@ -1,14 +1,18 @@
-//header
+body {
+  background: url("../images/bg.jpg") repeat;
+}
+
 $menuHeight: 66px;
 $menuHeightItem: 30px;
 $menuColorIcon: rgb(24, 24, 24);
-$slideHeight: 500px;
-
+$slideHeight: 610px;
+$blockMarginBottom: 84px;
+//header - start
 .navbar-right {
-  padding: ($menuHeight - $menuHeightItem)/2 0px;
+  padding: ($menuHeight - $menuHeightItem)/2 0;
 
   li > a {
-    padding: 0px 20px;
+    padding: 0 20px;
     line-height: $menuHeightItem;
     display: inline-block;
   }
@@ -27,7 +31,7 @@ $slideHeight: 500px;
     background: black;
     color: white !important;
     width: $menuHeightItem;
-    padding: 0px 7px;
+    padding: 0 7px;
 
     &hover {
 
@@ -36,64 +40,56 @@ $slideHeight: 500px;
 }
 
 .menu-top {
-  margin-bottom: 0px;
+  margin-bottom: 0;
+  background: white;
 }
 
-//slide
-.owl-wrapper-outer {
+//header - end
+
+//slide - start
+.owl-stage-outer {
   max-height: $slideHeight;
 }
 
 @mixin button-slide($padding, $bg) {
   padding: $padding;
   background: $bg;
+  color: white;
 }
 
 .big-slide {
   position: relative;
   margin-bottom: 35px;
+  background: white;
   .owl-controls {
-    z-index: 10;
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    margin-top: 0px;
+    $owl-button-margin: 40px;
     .owl-prev {
-      @include button-slide(10px, black);
+      @include button-slide(15px, black);
       float: left;
-      margin-left: 15px;
+      margin-left: $owl-button-margin;
     }
     .owl-next {
-      @include button-slide(10px, black);
+      @include button-slide(15px, black);
       float: right;
-      margin-right: 15px;
+      margin-right: $owl-button-margin;
     }
-    .owl-pagination {
+
+    .owl-nav {
       position: absolute;
-      bottom: -200px;
+      top: 50%;
       width: 100%;
-      .owl-page {
-        span {
-          opacity: 1;
-          background: white;
-          &:active {
-            background: red;
-          }
-        }
-        &.active, &:hover {
-          span {
-            background: #ff345b;
-          }
-        }
-      }
+      z-index: 10;
     }
   }
 
   .menu-slide {
     position: absolute;
     top: 40%;
-    width: 100%;
+    width: 90%;
     text-align: center;
+    z-index: 2;
+    left: 5%;
+    color: white;
     .logo-slide {
       margin-bottom: 20px;
     }
@@ -108,21 +104,137 @@ $slideHeight: 500px;
       li {
         display: inline-block;
         font-size: 18px;
-        padding: 0px 31px;
+        padding: 0 31px;
         border-right: 1px solid white;
+        &:last-child {
+          border: none;
+        }
       }
+    }
+    .slide-des {
+      h2 {
+        margin-top: 90px;
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: underline;
+      }
+      h3 {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: 300;
+      }
+      &h4 {
+        margin-top: 18px;
+      }
+    }
+  }
+
+  .owl-dots {
+    display: inline-block;
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    bottom: 10px;
+    z-index: 5;
+    .owl-dot {
+      display: inline-block;
+      span {
+        display: block;
+        background: white;
+        width: 10px;
+        height: 10px;
+        margin: 5px 7px;
+        border-radius: 30px;
+        transition: opacity 200ms ease;
+        cursor: pointer;
+        &:hover {
+          background: #ff345b;
+        }
+      }
+      &.active {
+        span {
+          background: #ff345b;
+        }
+      }
+    }
+  }
+
+  .owl-item {
+    img {
+      margin: 0 auto;
     }
   }
 }
 
 //end slide
 
+/*
+===========  Common block - start ============
+*/
+//bar-slash - start
+.bar-slash {
+  text-align: center;
+  .bar-slash-header {
+    background: url('../images/bar-slash.jpg') repeat-x;
+    background-size: contain;
+    .bar-slash-text {
+      background: url("../images/bg.jpg") repeat;
+      display: inline-block;
+      font-size: 24px;
+      line-height: 24px;
+      span {
+        content: "";
+        padding: 0 70px;
+        background: url("../images/bar-dot.jpg"), url("../images/bar-dot.jpg");
+        background-position: left center, right center;
+        background-repeat: no-repeat;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .bar-slash-content {
+    background: none;
+    margin-top: 15px;
+  }
+}
+
+//bar-slash - end
+
+//footer block - start
+.block {
+  .footer {
+    text-align: center;
+    a.goto {
+      border: 1px solid #3e3939;
+      color: #3e3939;
+      display: inline-block;
+      font-size: 22px;
+      margin: 50px 0;
+      padding: 18px 67px;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+//footer block - end
+
+/*
+============  Common block - end ===========
+*/
+
+/*
+============  Style blocks - start==========
+*/
+
 //block category
 .block-category {
   overflow: hidden;
+  margin-bottom: $blockMarginBottom;
   .block-category-item {
     transition: all 0.4s ease-out;
-    padding: 0px;
+    padding: 0;
     img {
       width: 100%;
       height: auto;
@@ -138,7 +250,7 @@ $slideHeight: 500px;
       font-weight: bold;
     }
     &:hover {
-      .block-category-des , .overlay{
+      .block-category-des, .overlay {
         transition: all 0.4s ease-out;
         opacity: 1;
       }
@@ -155,6 +267,109 @@ $slideHeight: 500px;
 }
 
 //end block category
+
+//block pickup - start
+.block-pickup {
+  text-align: center;
+  .image-banner {
+    margin: 50px 0;
+  }
+
+  .block-pickup-items {
+    .block-pickup-item {
+      transition: all 0.4s ease-out;
+      padding: 0;
+      img {
+        width: 100%;
+        height: auto;
+      }
+      $pickupOverlayWith: 90%;
+      $pickupOverlayHeight: 90%;
+      .overlay {
+        transition: all 0.4s ease-out;
+        background: rgba(255, 255, 255, 0.5);
+        width: $pickupOverlayWith;
+        height: $pickupOverlayHeight;
+        top: (100% - $pickupOverlayHeight) / 2;
+        left: (100% - $pickupOverlayWith) / 2;
+        position: absolute;
+        opacity: 0;
+        span {
+          position: absolute;
+          top: 50%;
+          width: 100%;
+          text-align: center;
+          color: black;
+          font-weight: bold;
+          left: 0;
+        }
+      }
+      &:hover {
+        .overlay {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+//block pickup - end
+
+//block recomment - start
+.block-recomment-items {
+  margin-top: 50px;
+  .recomment-item {
+    display: flex;
+    padding: 0;
+    .item-left {
+      padding: 0;
+    }
+    .item-right {
+      padding: 17px 12px;
+      background: white;
+      .item-title {
+        margin-bottom: 18px;
+      }
+      .item-price {
+        .price-remove {
+          font-size: 13px;
+          text-decoration: line-through;
+          padding: 0;
+        }
+        .price-sold {
+          font-size: 17px;
+          line-height: 13px;
+          color: #ce4a4a;
+          font-weight: bold;
+          padding: 0;
+        }
+      }
+      .item-sales
+      {
+        margin: 7px 0;
+        line-height: 24px;
+        span{
+          background: #ce4a4a;
+          color: white;
+          padding: 5px;
+          font-size: 12px;
+        }
+      }
+      .item-view-detail {
+        text-align: center;
+        border: 1px solid black;
+        padding: 5px 20px;
+      }
+    }
+  }
+}
+
+//block recomment - end
+
+/*
+============  Style blocks - start==========
+*/
+//block pickup - end
 @media (min-width: 768px) {
 }
 
