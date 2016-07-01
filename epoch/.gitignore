@@ -41,6 +41,5 @@ jspm_packages
 
 app/vendors
 .idea/
-bower.json
 app/lib/*/*.jpg
 app/lib/*/*.png
