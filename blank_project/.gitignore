@@ -41,3 +41,5 @@ jspm_packages
 
 app/vendors
 .idea/
+app/lib/*/*.jpg
+app/lib/*/*.png

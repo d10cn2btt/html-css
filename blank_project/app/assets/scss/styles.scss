@@ -1,0 +1,352 @@
+@charset "utf-8";
+/*============ setting website - start ============*/
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.wrap_container {
+  background: #f9dfa6 url("../images/bg.png") repeat;
+  margin: 0px auto;
+}
+
+.only_pc .container_pc {
+  min-width: 970px;
+}
+
+.delpadding {
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.delpadding_right {
+  padding-right: 0;
+}
+
+.delpadding_left {
+  padding-left: 0;
+}
+
+.line {
+  clear: both;
+  border-top: 1px solid rgba(153, 86, 45, 0.57);
+}
+
+.m-line {
+  display: inline-block !important;
+  line-height: 19px;
+  font-size: 12px;
+  width: 100%;
+}
+
+.auto {
+  margin: 0 auto;
+}
+
+/*============ setting website - end ============*/
+
+/*============ header - start ============*/
+.logo-top-wrapper {
+  background: #fff;
+  .logo-top {
+    max-height: 172px;
+    height: 100%;
+    text-align: center;
+    background: #fff;
+    padding: 5px 0;
+    img {
+      display: inline-block;
+    }
+  }
+}
+
+/* PC start */
+.pc-top-menu-wrapper {
+  background: #ee4e82;
+  padding: 5px 0;
+
+  .top-menu-container, .ie-top-menu-container {
+    .nav_pc {
+      text-align: center;
+      line-height: 40px;
+      a {
+        display: inline-block;
+        padding: 9px 0px 6px;
+        float: left;
+      }
+    }
+    .border-right-img {
+      -webkit-border-image: url(../images/line-right.png);
+      -moz-border-image: url(../images/line-right.png);
+      -o-border-image: url(../images/line-right.png);
+      border-image: url(../images/line-right.png);
+      border-right: 12px solid transparent;
+      border-image-repeat: repeat;
+      border-image-slice: 13;
+      border-bottom: 0;
+      border-left: 0;
+      border-top: 0;
+    }
+  }
+  .ie-top-menu-container {
+    border-style: dotted;
+    border-color: #fff;
+    border-right: none;
+    border-left: none;
+  }
+  .top-menu-container {
+    border-bottom: 2px dotted #fff;
+    border-top: 2px dotted #fff;
+  }
+}
+
+/* PC end */
+
+/* Mobile start */
+.m-logo-top-wrapper {
+  background-color: #ffffff;
+}
+
+.m-btn-menu {
+  width: 100%;
+  .m-menus-wrapper {
+    background: #ee4e82;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    .m-menu {
+      border-top: 2px dotted #ffffff;
+      border-bottom: 2px dotted #ffffff;
+      height: 51px;
+    }
+  }
+}
+
+.m-menu {
+  #m-btn-menu:focus, #m-btn-menu:hover {
+    text-decoration: none;
+  }
+  #m-btn-menu {
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    display: inline-block;
+  }
+  .m-nav-border {
+    padding: 2.5%;
+    &.btn-nav-custom {
+      width: 100%;
+      background: #ee4e82;
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .img-heart {
+      display: inline-block;
+      width: 17px;
+      height: 15px;
+      position: relative;
+      right: -30px;
+      background: url("../images/btn_nav.png") center center no-repeat;
+    }
+  }
+}
+
+.dropdown-menu.m-menus-custom {
+  padding: 0;
+  width: 100%;
+  margin: 0 auto;
+  position: static;
+  float: none;
+  background: #ffffff;
+  li {
+    text-align: center;
+    padding: 13px 0;
+    &:hover {
+      background: #f9e2aa;
+    }
+    a {
+      font-weight: bold;
+      font-size: 13px;
+      color: #000;
+      &:hover {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+/* Mobile end */
+/* media này chỉ fox cho header */
+@media (max-width: 768px) {
+  .m-logo-top-wrapper {
+    img {
+      margin: 0 auto;
+      height: auto;
+      width: 100%;
+    }
+  }
+  .m-menu {
+    border-image-slice: 6;
+  }
+}
+
+/* Mobile end */
+/*============ header - end ============*/
+
+/*============ footer - start ============*/
+/* dùng chung cho cả mobile & PC */
+.title-footer {
+  color: #99562d;
+  padding: 0 0 20px;
+  margin-top: 15px;
+  .tf-1 {
+    font-size: 10px;
+  }
+  .m-footer-policy {
+    font-size: 12px;
+  }
+  .m-project-name {
+    font-size: 10px;
+  }
+  .footer-policy {
+    font-size: 12px;
+    font-family: "ãƒ¡ã‚¤ãƒªã‚ª", Meiryo, "ãƒ’ãƒ©ã‚®ãƒŽè§’ã‚´ Pro W6", "Hiragino Kaku Gothic Pro", Osaka, "ï¼­ï¼³ ï¼°ã‚´ã‚·ãƒƒã‚¯", "MS PGothic", sans-serif;
+    margin-bottom: 20px;
+  }
+}
+
+/* PC footer - start */
+.footer {
+  .logo {
+    position: relative;
+    padding: 20px 0;
+  }
+  .social-icon {
+    list-style-type: none;
+    position: absolute;
+    float: right;
+    top: 20px;
+    right: 3%;
+    li {
+      float: left;
+      padding: 2px;
+    }
+  }
+  a {
+    color: #99562d;
+  }
+  .project-name {
+    letter-spacing: 3px;
+    font-size: 10px;
+  }
+}
+
+/* PC footer - end */
+
+/* Mobile footer - start */
+.m-footer-icons {
+  padding: 10px 0;
+  text-align: center;
+  margin: 0 auto;
+  li {
+    display: inline-block;
+    padding: 0;
+    list-style-type: none;
+  }
+}
+
+/* Mobile footer - end */
+
+/* media này chỉ fix cho footer */
+@media(min-width: 550px) {
+  .m-nav-border {
+    padding: 1%;
+  }
+  .totop_m {
+    background-size: 70%;
+  }
+  .footer {
+    .title-footer {
+      padding: 0 0 10px;
+    }
+  }
+  .m-footer-icons img {
+    width: 40px;
+  }
+  .m-logo-top-wrapper img {
+    width: 90%;
+  }
+  .dropdown-menu.m-menus-custom li {
+    padding: 12px;
+  }
+}
+
+/*============ footer - end ============*/
+
+/*============  media copy - start  ============*/
+@media (max-width: 1000px) {
+  .only_pc .container_pc {
+    width: 970px !important;
+  }
+  .only_pc {
+    min-width: 1000px;
+  }
+  .only_ipad .fix_height_12 {
+    min-height: 182px !important;
+  }
+  .only_ipad .nav_pc a {
+    padding: 9px 0px 6px;
+  }
+  .only_ipad .carousel-inner img {
+    max-height: 375px;
+  }
+  .only_ipad .nav_pc {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+@media(max-width: 650px) {
+  .social-icon li {
+    padding: 0;
+  }
+  .footer-socials img {
+    width: 85%;
+  }
+  .footer {
+    .logo {
+      padding-bottom: 0px;
+    }
+  }
+  .footer-socials {
+    display: inline-block;
+  }
+  .social-icon {
+    position: relative !important;
+    display: block;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    right: 0;
+    padding: 0;
+  }
+}
+
+/*============  media copy - end  ============*/
+
+/*============ media queries ============*/
+/*============  >1200px  ============*/
+@media (min-width: 1200px) {
+  .container {
+    width: 1100px;
+  }
+}
+
+/*============  Large Devices, Wide Screens 769 -> 1200 ============*/
+@media (min-width: 769px) and (max-width: 1200px) {
+}
+
+/*============  Small Devices, Tablets 481 -> 768 ============*/
+@media (max-width: 768px) {
+  .line.none_pc.m-line {
+    display: block !important
+  }
+}
