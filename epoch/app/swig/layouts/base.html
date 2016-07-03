@@ -1,57 +1,57 @@
 <!DOCTYPE html>
 {% include '../vars/global.html' %}
-<html lang="en">
+<html lang="ja">
 <head>
-    {% block head %}
-    <!-- Meta Data -->
-    <meta charset="utf-8">
-    <title>Title</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="shortcut icon" href="{{ assetDir }}/img/favicon.ico?v4" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta http-equiv="content-style-type" content="text/css"/>
+    <meta http-equiv="content-script-type" content="text/javascript"/>
+    <meta name="viewport"
+          content="initial-scale=1.0,width=device-width,user-scalable=yes,minimum-scale=1.0,maximum-scale=2.0"/>
+    <meta name="robots" content="index,follow"/>
+    <meta name="revisit_after" content="7 days"/>
+    <meta name="keywords" content="{{ keyword }}">
+    <meta name="description" content="{{ desc }}"/>
+    <meta property="og:title" content="シルバニア森のキッチン公式サイト"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="http://sylvanian-families.jp/world_view/"/>
+    <meta property="og:image" content="/includes_gl/img/common/img_fb.jpg"/>
+    <meta property="og:site_name" content="シルバニアファミリー公式サイト"/>
+    <meta property="og:locale" content="ja_JP"/>
+    <meta property="fb:app_id" content="580609391991136"/>
+    <!-- InstanceBeginEditable name="meta" -->
+    <!-- InstanceEndEditable -->
+    <title>{{title}}</title>
 
-    {% block styles %}
-    <!-- Main CSS -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700&amp;subset=latin' rel='stylesheet'
-          type='text/css'>
-    <!-- build:cssmains {{assetDir}}/css/main.css -->
-    <link rel="stylesheet" href="{{assetDir}}/css/styles.css"/>
-    <!-- endbuild -->
-    <!--[if !IE9]> -->
-    <!-- endbuild -->
-    <!--<![endif]-->
-    {% endblock %}
+    <link href="{{assetDir}}/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{assetDir}}/css/bootstrap-theme.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="{{assetDir}}/js/jquery.min.js"></script>
+    <script type="text/javascript" src="{{assetDir}}/js/jquery.ui.min.js"></script>
+    <link rel="stylesheet" href="{{assetDir}}/css/styles.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/vnd.microsoft.icon"/>
+    <link rel="icon" href="favicon.ico" type="image/vnd.microsoft.icon"/>
 
-    <!--[if lt IE 9]>
-      <!-- build:iejs {{assetDir}}/js/ielibs.min.js -->
-    <script src="{{ vendorDir }}/html5shiv/dist/html5shiv.js"></script>
-    <script src="{{ vendorDir }}/respond/src/respond.js"></script>
-    <!-- endbuild -->
-    <!--<![endif]-->
-    {% endblock %}
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if gt IE 9]>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
 </head>
-<body class="{{ [page, bodyClass] | join(' ') }} ">
-<header role="mainheader" class="">
+<body>
+<div class="wrap_container only_pc" id="acv-content">
+
     {% include 'partials/header.html' %}
-</header>
 
-<main class="{{ [mainClass] | join(' ') }}">
-    {% block main %}
-    {% endblock %}
-</main>
 
-<footer>
+    {% block main %}{% endblock %}
+    {% block shop %}{% endblock %}
+
     {% include 'partials/footer.html' %}
-</footer>
-
-<!-- Javascript makes everything alive -->
-{% block scripts %}
-<!-- build:js ./js/libs.js -->
-<script src="{{ vendorDir }}/jquery/dist/jquery.js"></script>
-<!-- endbuild -->
-<!-- build:mainjs ./js/main.js -->
-<script src="{{assetDir}}/js/main.js"></script>
-<!-- endbuild -->
-{% endblock %}
+    <script type="text/javascript" src="{{assetDir}}/js/jquery.lazy.min.js"></script>
+    <script type="text/javascript" src="{{assetDir}}/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="{{assetDir}}/js/script_new.js"></script>
+</div>
 </body>
 </html>

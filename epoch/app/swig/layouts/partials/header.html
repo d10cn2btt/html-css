@@ -1,2 +1,57 @@
-<div class="oe-header">
-</div>
+{% include '../../vars/global.html' %}
+    {% if device == "PC" %}
+    <div class="logo-top-wrapper">
+        <div class="container container_pc">
+            <div class="logo-top col-xs-10 col-xs-offset-1">
+                <img src="{{assetDir}}/images/maintop_kitchen.png" alt="" class="img-responsive lazy">
+            </div>
+        </div>
+    </div>
+    <div class="pc-top-menu-wrapper">
+        <div class="top-menu-container">
+            <div class="container container_pc">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-4 col-xs-4 border-right-img nav_pc">
+                            <a href="http://sylvanian-families.jp/shop/kitchen/yokohama_wp/"> <img
+                                src="{{assetDir}}/images/menu_1.png"
+                                alt=""
+                                class="opacity_img img-responsive lazy col-xs-12 delpadding "></a>
+                        </div>
+                        <div class="col-lg-4 col-xs-4 border-right-img nav_pc">
+                            <a href="http://sylvanian-families.jp/shop/kitchen/laketown/">
+                                <img src="{{assetDir}}/images/menu_2.png" alt=""
+                                     class="opacity_img img-responsive lazy col-xs-12 delpadding "></a>
+                        </div>
+                        <div class="col-lg-4 col-xs-4 nav_pc">
+                            <a href="http://sylvanian-families.jp/shop/kitchen/llp_tokyobay/"> <img
+                                src="{{assetDir}}/images/menu_3.png"
+                                alt=""
+                                class="opacity_img img-responsive lazy col-xs-12 delpadding "></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    {% if device == "Mobile" %}
+    <div class="m-logo-top-wrapper">
+        <img src="{{assetDir}}/images/m/logo-header.png" alt="" class="img-responsive">
+    </div>
+    <div class="btn-group m-btn-menu " role="group">
+        <div class="m-menus-wrapper">
+            <div class="m-menu">
+                <a type="button " id="m-btn-menu" class="btn-nav-custom m-nav-border" data-toggle="dropdown" aria-expanded="false">
+                    店舗をお選びください
+                    <span class="img-heart"></span>
+                </a>
+            </div>
+        </div>
+        <ul class="dropdown-menu m-menus-custom" role="menu">
+            <li><a href="http://sylvanian-families.jp/shop/kitchen/yokohama_wp/">横浜ワールドポーターズ店</a></li>
+            <li><a href="http://sylvanian-families.jp/shop/kitchen/laketown/">レイクタウンアウトレット店</a></li>
+            <li><a href="http://sylvanian-families.jp/shop/kitchen/llp_tokyobay/">ららぼーとTOKYO-BAY店</a></li>
+        </ul>
+    </div>
+    {% endif %}
